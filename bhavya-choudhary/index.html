@@ -1,1 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="importmap">
+      {
+        "imports": {
+          "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+      }
+     </script>
+     <script type="module" src="ai-prompt.js"></script>
+</head>
+<body>
+  <div class="chat-container">
+    <div class="header">
+      <div class="title">Automated Parental Assistant</div>
+      <div class="subtitle">Powered by Sourabh Suneja</div>
+    </div>
+    <div class="chat-box" id="chat-box">
+      <div class="message bot-message">
+Hello, what would you like to know about Bhavya Choudhary?
+<br><br><b>Examples:</b><br>
+<i>What are Bhavya's scores in PT-1?</i><br>
+<i>Any complaints about her?</i><br>
+<i>Any tips for her?</i><br>
+<i>Which subjects is she struggling with?</i><br>
+<i>Write a letter for Bhavya on the behalf of her class teacher.</i>
+</div>
+    </div>
+    <div class="input-box">
+      <textarea id="user-input" placeholder="Type something" rows="1" oninput="autoResize(this)" onkeypress="handleKeyPress(event)"></textarea>
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script>
+  
+  </script>
+</body>
+</html>
 
