@@ -81,6 +81,34 @@ const student3 = {
       "feedback": "must learn to behave properly in class"
 };
 
+const student4 = {
+      "name": "Yashasvi Kumawat",
+      "grade": 8,
+      "section": "A2",
+      "DOB": "24-Dec",
+      "gender": "F",
+      "marks": {
+          "Periodic Test 1": {
+              "English": "20/20",
+              "Hindi": "18/20",
+              "Maths": "16/20",
+              "Science": "19/20",
+              "SST": "15/20",
+              "Sanskrit": "13/20",
+              "Computer": "20/20",
+              "GK": "19/20"
+          }
+      },
+      "address": "can't be shared",
+      "contact": "can't be shared",
+      "house": "Sapphire",
+      "qualities": "sincere, introvert, very shy, can benefit from working on her confidence and being a little more open. Has depths of qualities only waiting to be realised",
+      "interests": "artistic pursuits, drawing, dance",
+      "achievements": "academically good, has developed games in Scratch in her coding classes, experimented with robotics, shows a very calm and sincere attitude",
+      "complaints": "no complaints at all",
+      "class teacher": "Mrs. Abhilasha Joshi"
+};
+
 // global variable to store response fetched from AI
 let AIResponse;
 
