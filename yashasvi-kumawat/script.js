@@ -85,7 +85,7 @@ const student4 = {
       "name": "Yashasvi Kumawat",
       "grade": 8,
       "section": "A2",
-      "DOB": "24-Dec",
+      "DOB": "24-Dec-11",
       "gender": "F",
       "marks": {
           "Periodic Test 1": {
