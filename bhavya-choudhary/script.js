@@ -3,7 +3,7 @@ const student = {
       "name": "Bhavya Choudhary",
       "grade": 8,
       "section": "A2",
-      "DOB": "7-Sep-12",
+      "DOB": "7-Sep-11",
       "gender": "F",
       "marks": {
           "Periodic Test 1": {
