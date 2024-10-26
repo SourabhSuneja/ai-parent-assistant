@@ -1,17 +1,28 @@
-window.fetchResponse = async function(prompt) {
-    const url = `https://node-app-dc4.pages.dev/fetch?prompt=${encodeURIComponent(prompt)}`;
-    
-    try {
-        const response = await fetch(url);
+window.fetchResponse = function(prompt) {
+    return new Promise((resolve, reject) => {
+        const callbackName = `jsonpCallback_${Date.now()}`;
+        const url = `https://node-app-dc4.pages.dev/fetch?prompt=${encodeURIComponent(prompt)}&callback=${callbackName}`;
         
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
+        // Create a script element to fetch the data
+        const script = document.createElement('script');
+        script.src = url;
         
-        const text = await response.text();
-        return text;
-    } catch (error) {
-        console.error('Fetch error:', error);
-        return null;
-    }
+        // Define the callback function
+        window[callbackName] = function(data) {
+            resolve(data);
+            // Clean up after the request
+            delete window[callbackName];
+            document.body.removeChild(script);
+        };
+
+        // Handle errors
+        script.onerror = function() {
+            reject(new Error('Fetch error'));
+            delete window[callbackName];
+            document.body.removeChild(script);
+        };
+
+        // Append the script to the document
+        document.body.appendChild(script);
+    });
 };
